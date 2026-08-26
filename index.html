@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script>
+    (function () {
+      var saved = null;
+      try { saved = localStorage.getItem('theme'); } catch (e) {}
+      var theme = saved || (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+      if (theme === 'light') document.documentElement.setAttribute('data-theme', 'light');
+    })();
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Debanjan Mondal — Senior AI Engineer</title>
@@ -20,6 +28,17 @@
       --text: #f1f0f7;
       --muted: #9d9ab5;
       --border: #2e2e3a;
+      --nav-bg: rgba(15,15,19,0.85);
+    }
+
+    html[data-theme="light"] {
+      --bg: #f7f7fb;
+      --surface: #ffffff;
+      --surface2: #eeedf5;
+      --text: #17171f;
+      --muted: #5c5872;
+      --border: #e2e1ea;
+      --nav-bg: rgba(247,247,251,0.85);
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -31,6 +50,7 @@
       background: var(--bg);
       color: var(--text);
       overflow-x: hidden;
+      transition: background 0.25s, color 0.25s;
     }
 
     /* ── NAV ── */
@@ -38,9 +58,10 @@
       position: fixed; top: 0; left: 0; right: 0; z-index: 100;
       display: flex; justify-content: space-between; align-items: center;
       padding: 1.1rem 2.5rem;
-      background: rgba(15,15,19,0.85);
+      background: var(--nav-bg);
       backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--border);
+      transition: background 0.25s, border-color 0.25s;
     }
     .nav-logo {
       font-family: 'Space Grotesk', sans-serif;
@@ -61,6 +82,14 @@
       transition: opacity 0.2s !important;
     }
     .nav-cta:hover { opacity: 0.85; }
+    .theme-toggle {
+      width: 2.1rem; height: 2.1rem; border-radius: 50%;
+      border: 1px solid var(--border); background: var(--surface);
+      color: var(--text); font-size: 1rem; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      transition: border-color 0.2s, background 0.2s;
+    }
+    .theme-toggle:hover { border-color: var(--violet); background: var(--surface2); }
 
     /* ── HERO ── */
     #hero {
@@ -408,6 +437,7 @@
     <li><a href="#projects">Projects</a></li>
     <li><a href="#experience">Experience</a></li>
     <li><a href="#contact" class="nav-cta">Contact</a></li>
+    <li><button id="theme-toggle" class="theme-toggle" aria-label="Toggle light/dark theme" title="Toggle theme">🌙</button></li>
   </ul>
 </nav>
 
@@ -701,6 +731,44 @@
         </div>
       </div>
 
+      <div class="project-card">
+        <div class="project-banner" style="background:linear-gradient(135deg,#06b6d422,#7c3aed22)">🎙️</div>
+        <div class="project-body">
+          <div class="project-type" style="color:var(--cyan)">NLP · Conversational AI</div>
+          <h3>Bhutan Voice-First Public Service Assistant</h3>
+          <p>Omdena sprint (Team 4) — assistant helping Bhutanese citizens navigate public services (permits, health, business registration) in Dzongkha and English. Built the multi-backend intent classifier (Gemini / local LLM / keyword, confidence-gated escalation) and a DPR-based conversational flow engine with domain dialog graphs and safety guardrails.</p>
+          <div class="project-stack">
+            <span class="tag tag-cyan">Gemini</span>
+            <span class="tag tag-purple">DPR</span>
+            <span class="tag tag-green">FAISS</span>
+            <span class="tag tag-pink">Python</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/debanjanm/Portfolio-Public/tree/main/Omdena-BhutanVoiceFirstAssistant" class="proj-link filled" target="_blank" rel="noopener">GitHub →</a>
+            <a href="https://github.com/debanjanm/Portfolio-Public/blob/main/Omdena-BhutanVoiceFirstAssistant/README.md" class="proj-link" target="_blank" rel="noopener">Docs</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-banner" style="background:linear-gradient(135deg,#ec489922,#8b5cf622)">🧠</div>
+        <div class="project-body">
+          <div class="project-type" style="color:var(--pink)">NLP · LLM</div>
+          <h3>Mental Health RAG Chatbot</h3>
+          <p>RAG-based mental health support chatbot built during an Omdena sprint (Team 5). Retrieves grounded context from mental-health reference PDFs via FAISS and answers through Gemini with per-user conversation memory, keeping responses tied to source material instead of hallucinating.</p>
+          <div class="project-stack">
+            <span class="tag tag-purple">LangChain</span>
+            <span class="tag tag-cyan">Gemini</span>
+            <span class="tag tag-green">FAISS</span>
+            <span class="tag tag-yellow">Streamlit</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/debanjanm/Portfolio-Public/tree/main/Omdena-MentalHealthBot" class="proj-link filled" target="_blank" rel="noopener">GitHub →</a>
+            <a href="https://github.com/debanjanm/Portfolio-Public/blob/main/Omdena-MentalHealthBot/README.md" class="proj-link" target="_blank" rel="noopener">Docs</a>
+          </div>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -877,6 +945,21 @@
     navLinks.forEach(a => {
       a.style.color = a.getAttribute('href') === '#' + current ? 'var(--text)' : '';
     });
+  });
+
+  // Theme toggle
+  const themeBtn = document.getElementById('theme-toggle');
+  const setIcon = () => {
+    themeBtn.textContent = document.documentElement.getAttribute('data-theme') === 'light' ? '☀️' : '🌙';
+  };
+  setIcon();
+  themeBtn.addEventListener('click', () => {
+    const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+    const next = isLight ? 'dark' : 'light';
+    if (isLight) document.documentElement.removeAttribute('data-theme');
+    else document.documentElement.setAttribute('data-theme', 'light');
+    try { localStorage.setItem('theme', next); } catch (e) {}
+    setIcon();
   });
 </script>
 </body>
