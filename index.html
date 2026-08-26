@@ -618,115 +618,96 @@
     <div class="projects-grid reveal">
 
       <div class="project-card">
-        <div class="project-banner" style="background:linear-gradient(135deg,#7c3aed22,#ec489922)">🗣️</div>
+        <div class="project-banner" style="background:linear-gradient(135deg,#7c3aed22,#06b6d422)">🏷️</div>
         <div class="project-body">
-          <div class="project-type" style="color:var(--violet)">NLP · LLM</div>
-          <h3>RAG-Powered Document Q&amp;A</h3>
-          <p>Built a Retrieval-Augmented Generation (RAG) pipeline for querying large document corpora using LangChain, FAISS, and GPT-4. Achieves 87% accuracy on domain-specific Q&amp;A benchmarks.</p>
+          <div class="project-type" style="color:var(--violet)">NLP · Retrieval</div>
+          <h3>Harmonized System (HS) Code Prediction</h3>
+          <p>Reference build of a real Trade Finance PoC: predicts customs HS codes from free-text product descriptions via zero-shot embedding retrieval (Universal Sentence Encoder + cosine similarity against ~5,300 official codes) — no training data needed. Includes a separate TF-IDF/TextCNN classification exploration for comparison.</p>
           <div class="project-stack">
-            <span class="tag tag-purple">LangChain</span>
-            <span class="tag tag-pink">OpenAI</span>
-            <span class="tag tag-cyan">FAISS</span>
-            <span class="tag tag-green">FastAPI</span>
+            <span class="tag tag-purple">Universal Sentence Encoder</span>
+            <span class="tag tag-cyan">Cosine Similarity</span>
+            <span class="tag tag-pink">TextCNN</span>
+            <span class="tag tag-green">TF-IDF</span>
           </div>
           <div class="project-links">
-            <a href="#" class="proj-link filled">Demo →</a>
-            <a href="#" class="proj-link">GitHub</a>
+            <a href="https://github.com/debanjanm/Portfolio-Professional/tree/main/Harmonized-System-Code-Prediction" class="proj-link filled" target="_blank" rel="noopener">GitHub →</a>
+            <a href="https://github.com/debanjanm/Portfolio-Professional/blob/main/Harmonized-System-Code-Prediction/README.md" class="proj-link" target="_blank" rel="noopener">Docs</a>
           </div>
         </div>
       </div>
 
       <div class="project-card">
-        <div class="project-banner" style="background:linear-gradient(135deg,#06b6d422,#10b98122)">📉</div>
+        <div class="project-banner" style="background:linear-gradient(135deg,#ec489922,#8b5cf622)">⚓</div>
         <div class="project-body">
-          <div class="project-type" style="color:var(--cyan)">Machine Learning</div>
-          <h3>Customer Churn Predictor</h3>
-          <p>End-to-end ML pipeline predicting customer churn with 94% AUC-ROC. Includes automated feature engineering, model explainability with SHAP, and a Streamlit dashboard for business users.</p>
+          <div class="project-type" style="color:var(--pink)">Entity Resolution</div>
+          <h3>Port / Entity Name Matching</h3>
+          <p>Fuzzy string-matching PoC for Trade Finance: scores how well a manually-entered bank, port, company, or vessel name matches a known dictionary using five similarity metrics (Monge-Elkan, Jaro-Winkler, Jaccard, Damerau-Levenshtein, Levenshtein), taking the max since no single metric handles every real-world messiness pattern.</p>
           <div class="project-stack">
-            <span class="tag tag-cyan">XGBoost</span>
-            <span class="tag tag-green">SHAP</span>
+            <span class="tag tag-pink">R</span>
+            <span class="tag tag-purple">stringdist</span>
+            <span class="tag tag-cyan">Jaro-Winkler</span>
+            <span class="tag tag-green">Fuzzy Matching</span>
+          </div>
+          <div class="project-links">
+            <a href="https://github.com/debanjanm/Portfolio-Professional/tree/main/Port-Matching" class="proj-link filled" target="_blank" rel="noopener">GitHub →</a>
+            <a href="https://github.com/debanjanm/Portfolio-Professional/blob/main/Port-Matching/README.md" class="proj-link" target="_blank" rel="noopener">Docs</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-banner" style="background:linear-gradient(135deg,#06b6d422,#10b98122)">💬</div>
+        <div class="project-body">
+          <div class="project-type" style="color:var(--cyan)">NLP · Analytics</div>
+          <h3>Customer Feedback / NPS Analysis</h3>
+          <p>Reference build of a real Customer Experience analytics project mining ~50K monthly NPS survey responses (score + Hindi/English/Hinglish free text) for time/location drivers, VADER sentiment, and NPS-impact n-gram themes — every "insight" is gated behind a significance test before reaching a leadership summary.</p>
+          <div class="project-stack">
+            <span class="tag tag-cyan">VADER</span>
+            <span class="tag tag-green">Statistical Testing</span>
             <span class="tag tag-yellow">Streamlit</span>
-            <span class="tag tag-orange">MLflow</span>
+            <span class="tag tag-purple">NLP</span>
           </div>
           <div class="project-links">
-            <a href="#" class="proj-link filled">Demo →</a>
-            <a href="#" class="proj-link">GitHub</a>
+            <a href="https://github.com/debanjanm/Portfolio-Professional/tree/main/Customer-Feedback-Analysis" class="proj-link filled" target="_blank" rel="noopener">GitHub →</a>
+            <a href="https://github.com/debanjanm/Portfolio-Professional/blob/main/Customer-Feedback-Analysis/README.md" class="proj-link" target="_blank" rel="noopener">Docs</a>
           </div>
         </div>
       </div>
 
       <div class="project-card">
-        <div class="project-banner" style="background:linear-gradient(135deg,#f9731622,#fbbf2422)">👁️</div>
+        <div class="project-banner" style="background:linear-gradient(135deg,#f9731622,#fbbf2422)">📧</div>
         <div class="project-body">
-          <div class="project-type" style="color:var(--orange)">Computer Vision</div>
-          <h3>Medical Image Classifier</h3>
-          <p>Deep learning model for chest X-ray classification (pneumonia detection) using fine-tuned EfficientNet-B4. Achieves 96% sensitivity, deployed as a HIPAA-compliant REST API on AWS.</p>
+          <div class="project-type" style="color:var(--orange)">NLP · Classification</div>
+          <h3>Email Complaint Classification</h3>
+          <p>Reference build of a real ~4-5K-emails/day complaint-routing project: a 3-level hierarchical classifier mirroring the bank's real KANA taxonomy, evolved from a TF-IDF baseline into an explainable pipeline that surfaces the weighted key phrases behind every prediction, plus a SHAP comparison.</p>
           <div class="project-stack">
-            <span class="tag tag-orange">PyTorch</span>
-            <span class="tag tag-yellow">EfficientNet</span>
-            <span class="tag tag-purple">AWS</span>
-            <span class="tag tag-pink">Docker</span>
+            <span class="tag tag-orange">scikit-learn</span>
+            <span class="tag tag-yellow">SHAP</span>
+            <span class="tag tag-pink">Explainability</span>
+            <span class="tag tag-purple">Hierarchical Classification</span>
           </div>
           <div class="project-links">
-            <a href="#" class="proj-link filled">Demo →</a>
-            <a href="#" class="proj-link">GitHub</a>
+            <a href="https://github.com/debanjanm/Portfolio-Professional/tree/main/Complaint-Classification" class="proj-link filled" target="_blank" rel="noopener">GitHub →</a>
+            <a href="https://github.com/debanjanm/Portfolio-Professional/blob/main/Complaint-Classification/README.md" class="proj-link" target="_blank" rel="noopener">Docs</a>
           </div>
         </div>
       </div>
 
       <div class="project-card">
-        <div class="project-banner" style="background:linear-gradient(135deg,#10b98122,#06b6d422)">📊</div>
+        <div class="project-banner" style="background:linear-gradient(135deg,#10b98122,#06b6d422)">🕵️</div>
         <div class="project-body">
-          <div class="project-type" style="color:var(--green)">Data Engineering</div>
-          <h3>Real-Time Analytics Pipeline</h3>
-          <p>Streaming data pipeline processing 50K+ events/sec using Kafka, Spark Structured Streaming, and a live Power BI dashboard. Reduced reporting latency from 24h to under 30 seconds.</p>
+          <div class="project-type" style="color:var(--green)">Entity Resolution · Fraud</div>
+          <h3>Customer Record Deduplication</h3>
+          <p>Reference build of a real Client Due Diligence fraud-linkage problem: links customer records opened under different-looking names/addresses back to the same person via blocking + a trained pairwise classifier + graph clustering — includes a documented finding that a perfect pairwise test score still produced false merges via transitive chaining.</p>
           <div class="project-stack">
-            <span class="tag tag-green">Kafka</span>
-            <span class="tag tag-cyan">Spark</span>
-            <span class="tag tag-yellow">Airflow</span>
-            <span class="tag tag-purple">dbt</span>
+            <span class="tag tag-green">NetworkX</span>
+            <span class="tag tag-cyan">Entity Resolution</span>
+            <span class="tag tag-purple">scikit-learn</span>
+            <span class="tag tag-pink">Blocking</span>
           </div>
           <div class="project-links">
-            <a href="#" class="proj-link filled">Case Study →</a>
-            <a href="#" class="proj-link">GitHub</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-banner" style="background:linear-gradient(135deg,#8b5cf622,#ec489922)">🔤</div>
-        <div class="project-body">
-          <div class="project-type" style="color:var(--pink)">NLP</div>
-          <h3>Multilingual Sentiment Analysis</h3>
-          <p>Fine-tuned mBERT on a 12-language sentiment dataset for social media monitoring. Deployed as a scalable microservice handling 10K requests/min with sub-100ms latency.</p>
-          <div class="project-stack">
-            <span class="tag tag-pink">HuggingFace</span>
-            <span class="tag tag-purple">mBERT</span>
-            <span class="tag tag-cyan">FastAPI</span>
-            <span class="tag tag-green">Redis</span>
-          </div>
-          <div class="project-links">
-            <a href="#" class="proj-link filled">Demo →</a>
-            <a href="#" class="proj-link">GitHub</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="project-card">
-        <div class="project-banner" style="background:linear-gradient(135deg,#fbbf2422,#f9731622)">🏆</div>
-        <div class="project-body">
-          <div class="project-type" style="color:var(--yellow)">Kaggle Competition</div>
-          <h3>House Price Prediction (Top 3%)</h3>
-          <p>Ensemble of gradient-boosted trees (XGBoost, LightGBM, CatBoost) with advanced feature engineering achieving top 3% on the Kaggle Ames Housing leaderboard.</p>
-          <div class="project-stack">
-            <span class="tag tag-yellow">XGBoost</span>
-            <span class="tag tag-orange">LightGBM</span>
-            <span class="tag tag-pink">CatBoost</span>
-            <span class="tag tag-cyan">Optuna</span>
-          </div>
-          <div class="project-links">
-            <a href="#" class="proj-link filled">Kaggle →</a>
-            <a href="#" class="proj-link">Notebook</a>
+            <a href="https://github.com/debanjanm/Portfolio-Professional/tree/main/Customer-Record-Deduplication" class="proj-link filled" target="_blank" rel="noopener">GitHub →</a>
+            <a href="https://github.com/debanjanm/Portfolio-Professional/blob/main/Customer-Record-Deduplication/README.md" class="proj-link" target="_blank" rel="noopener">Docs</a>
           </div>
         </div>
       </div>
