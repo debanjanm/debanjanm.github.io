@@ -14,9 +14,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Debanjan Mondal — Senior AI Engineer</title>
-  <meta name="description" content="Senior AI Engineer and Gen AI Squad Lead at Standard Chartered. Statistics (IIT Bombay) to production AI: LLM fine-tuning, quantization, latency optimization." />
+  <meta name="description" content="Senior AI Engineer at Standard Chartered GBS, building agentic AI platforms for regulated financial services. Statistics (IIT Bombay) to production AI: multi-agent orchestration, RAG, LLM fine-tuning." />
   <meta property="og:title" content="Debanjan Mondal — Senior AI Engineer" />
-  <meta property="og:description" content="Statistics to production AI. LLM fine-tuning, quantization, and latency optimization for a global bank." />
+  <meta property="og:description" content="Statistics to production AI. Agentic platforms, multi-agent RAG, and LLM fine-tuning for a global bank." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://debanjanm.github.io" />
   <meta name="twitter:card" content="summary" />
@@ -293,6 +293,39 @@
     }
     .links a:hover { color: var(--accent); border-bottom-color: var(--accent); }
 
+    /* ── PLATFORM WORK ── */
+    .platform { padding: 2.4rem 0; border-bottom: 1px solid var(--rule-soft); }
+    .platform:first-of-type { padding-top: 0; }
+    .platform:last-of-type { border-bottom: none; }
+    .platform-head {
+      display: flex; align-items: baseline; justify-content: space-between;
+      gap: 1.5rem; flex-wrap: wrap; margin-bottom: 0.45rem;
+    }
+    .platform h3 {
+      font-family: 'Newsreader', Georgia, serif;
+      font-size: 1.35rem; font-weight: 400; letter-spacing: -0.015em;
+    }
+    .platform .arch {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem; color: var(--muted); letter-spacing: 0.02em;
+      margin-bottom: 0.9rem;
+    }
+    .platform > p { color: var(--text-dim); line-height: 1.7; max-width: 64ch; margin-bottom: 1.1rem; }
+    .decision {
+      border-left: 2px solid var(--accent);
+      padding: 0.1rem 0 0.1rem 1rem;
+      max-width: 62ch; margin-bottom: 1.1rem;
+    }
+    .decision .mono { display: block; margin-bottom: 0.25rem; color: var(--accent); }
+    .decision p { color: var(--text-dim); line-height: 1.7; }
+    .metrics {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem; color: var(--muted); letter-spacing: 0.02em;
+    }
+    .metrics b { color: var(--text); font-weight: 500; }
+    .metrics span::after { content: '  ·  '; color: var(--rule); }
+    .metrics span:last-child::after { content: ''; }
+
     /* ── EXPERIENCE ── */
     .job {
       display: grid; grid-template-columns: 190px 1fr;
@@ -418,6 +451,7 @@
       <ul class="nav-links">
         <li><a href="#approach">Approach</a></li>
         <li><a href="#arc">Arc</a></li>
+        <li><a href="#platforms">Platforms</a></li>
         <li><a href="#work">Work</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#contact">Contact</a></li>
@@ -435,13 +469,13 @@
   <div class="wrap">
     <div class="hero-meta">
       <span class="dot"></span>
-      <span class="mono">Gen AI Squad Lead · Standard Chartered · Bengaluru</span>
+      <span class="mono">Senior AI Engineer · Standard Chartered GBS · Bengaluru</span>
     </div>
 
     <h1 class="hero-name">Debanjan Mondal</h1>
 
     <div class="hero-role">
-      <b>Senior AI Engineer</b> — LLM fine-tuning, quantization &amp; latency optimization<br />
+      <b>Senior AI Engineer</b> — agentic AI platforms for regulated financial services<br />
       MSc Applied Statistics &amp; Informatics, IIT Bombay
     </div>
 
@@ -479,9 +513,9 @@
       <div>
         <h2 class="sec-title">Statistical rigor, applied to <em>systems that ship</em></h2>
         <p class="lede">
-          I lead Gen AI initiatives at Standard Chartered GBS, building the bank's proprietary
-          LLM products with the SCNXT AIML Product team — fine-tuning, quantizing, and cutting
-          latency on models that have to work inside a regulated institution.
+          I build agentic AI platforms at Standard Chartered GBS — multi-agent orchestration,
+          retrieval, and fine-tuning infrastructure for compliance work, where every answer has
+          to be traceable and every agent has to be governable.
         </p>
         <p class="lede">
           The statistics training shows up in how I evaluate. A single train/test split that
@@ -543,11 +577,168 @@
             <span class="mono">2021 — Present</span>
           </div>
           <p>
-            Deep learning for information extraction and document understanding, then RAG
-            pipelines and agentic workflows, now leading Gen AI squad work on LLM fine-tuning,
-            model quantization, and latency optimization for enterprise-scale deployment.
+            Deep learning for information extraction and document understanding, then an internal
+            fine-tuning platform built on QLoRA and 4-bit quantization, and now multi-agent
+            platforms for compliance — governance backends, jurisdiction-scoped RAG, and
+            regulatory impact analysis inside a bank's constraints.
           </p>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PLATFORM WORK ─── -->
+<section id="platforms">
+  <div class="wrap">
+    <div class="cols reveal">
+      <div class="rail">
+        <span class="mono rail-num">03</span>
+        <span class="mono">Platform Work</span>
+      </div>
+      <div>
+        <h2 class="sec-title">Agentic systems for a <em>regulated environment</em></h2>
+        <p class="lede" style="margin-bottom:3rem">
+          This work lives inside a bank, so the code stays there. What I can share is the
+          architecture and the reasoning — the constraints that shaped each system, and the
+          tradeoffs I'd defend in a design review. Systems are described by what they do
+          rather than by their internal names.
+        </p>
+
+        <div class="platform">
+          <div class="platform-head">
+            <h3>Multi-tenant agent governance backend</h3>
+            <span class="mono">2025 — Present</span>
+          </div>
+          <div class="arch">Django · LangGraph · shared services layer · DDD / clean architecture</div>
+          <p>
+            A shared backend that standardizes authentication, guardrails, retrieval, and audit
+            logging across a family of compliance agents. Rather than each agent team
+            reimplementing governance, the framework provides it — so a new agent inherits
+            compliance controls by construction instead of by review. Built from scratch and led
+            its domain-driven, clean-architecture migration with a two-person engineering pod.
+          </p>
+          <div class="decision">
+            <span class="mono">Decision</span>
+            <p>
+              In a regulated institution, audit logging and guardrails aren't per-team
+              implementation details — they're a compliance surface. Centralizing them into a
+              framework layer trades some team autonomy for a property that matters more here:
+              you can answer "what did this agent do, and was it allowed to?" uniformly, for
+              every agent, without auditing each one separately.
+            </p>
+          </div>
+        </div>
+
+        <div class="platform">
+          <div class="platform-head">
+            <h3>Multi-agent RAG platform for compliance review</h3>
+            <span class="mono">2025 — Present</span>
+          </div>
+          <div class="arch">LangGraph multi-agent orchestration · jurisdiction-scoped retrieval · auditable answers</div>
+          <p>
+            Built on the governance framework above. Compliance analysts previously ran a two-to-three
+            day manual triage to answer a policy question; the platform returns a same-day,
+            jurisdiction-scoped answer with its sources attached. Retrieval is constrained by
+            jurisdiction rather than filtered after the fact, so an answer can never be assembled
+            from documents that don't apply to the asking market.
+          </p>
+          <div class="decision">
+            <span class="mono">Decision</span>
+            <p>
+              Auditability had to be an output, not a log. An answer that a human can't trace
+              back to a source is worthless in compliance review regardless of how good it reads,
+              so citations are part of the response contract — the system would rather return
+              less than return something unattributable.
+            </p>
+          </div>
+          <div class="metrics">
+            <span><b>~60–75%</b> rated positively across internal evaluation batches</span>
+          </div>
+        </div>
+
+        <div class="platform">
+          <div class="platform-head">
+            <h3>Regulatory impact analysis engine</h3>
+            <span class="mono">2025 — Present</span>
+          </div>
+          <div class="arch">Two-stage reasoning · recall-weighted thresholds · concurrency &amp; timeout budgets</div>
+          <p>
+            An agent that reads incoming regulatory circulars and flags whether they affect
+            existing bank policies. The costs here are asymmetric: a missed impact is a
+            compliance exposure, a false alarm is an analyst's afternoon. The system is tuned
+            accordingly — deliberately biased toward recall, accepting more false positives to
+            drive missed impacts toward zero.
+          </p>
+          <div class="decision">
+            <span class="mono">Decision</span>
+            <p>
+              Most circular sections don't touch policy at all, so spending a full reasoning pass
+              on every section is waste. A cheap first stage discards clearly non-impacting
+              sections and the expensive reasoning runs only on candidates — roughly half the LLM
+              calls, with the recall bias preserved because the cheap stage is tuned to
+              over-admit rather than over-reject.
+            </p>
+          </div>
+          <div class="metrics">
+            <span><b>50%</b> fewer LLM calls on non-impacting sections</span>
+          </div>
+        </div>
+
+        <div class="platform">
+          <div class="platform-head">
+            <h3>Internal LLM fine-tuning platform</h3>
+            <span class="mono">2024 — 2025</span>
+          </div>
+          <div class="arch">QLoRA · Mistral-7B-Instruct · 4-bit NF4 quantization · Flash Attention 2 · config-driven pipeline</div>
+          <p>
+            An end-to-end fine-tuning platform covering data preparation through inference, driven
+            by configuration rather than notebooks. Quantization and attention optimizations were
+            the difference between fine-tuning being an occasional event and a routine one on the
+            hardware actually available.
+          </p>
+          <div class="decision">
+            <span class="mono">Decision</span>
+            <p>
+              Config-driven over notebook-driven, because the point of a platform is comparability.
+              A tuning run you can't reproduce or diff against the previous one isn't an
+              experiment — it's an anecdote. Every run is declared by a config file that is itself
+              the record of what was tried.
+            </p>
+          </div>
+          <div class="metrics">
+            <span><b>3x</b> training speed</span><span><b>10%</b> memory reduction</span><span><b>4%</b> hit-rate gain</span><span><b>10%</b> BLEU/ROUGE</span>
+          </div>
+        </div>
+
+        <div class="platform">
+          <div class="platform-head">
+            <h3>Multi-strategy entity extraction framework</h3>
+            <span class="mono">2021 — 2024</span>
+          </div>
+          <div class="arch">4-layer cascade: regex · keyword · lookup · ontology · config-driven</div>
+          <p>
+            A configurable extraction engine for financial documents, layering deterministic
+            strategies ahead of learned ones. Deployed across four release phases; the
+            deterministic layers resolve what they can, and only genuinely ambiguous fields reach
+            the model. Paired with extending a sequence-tagging NER model
+            (BERT + BiLSTM + Attention + CRF) into the document pipeline.
+          </p>
+          <div class="decision">
+            <span class="mono">Decision</span>
+            <p>
+              A layered cascade rather than one model end to end. When a regex or an ontology
+              lookup can settle a field, it does so cheaply, deterministically, and — critically
+              for document review — explainably. The model is reserved for what the deterministic
+              layers genuinely can't resolve, which keeps both cost and the unexplainable surface
+              area small.
+            </p>
+          </div>
+          <div class="metrics">
+            <span><b>50K+</b> documents/month</span><span>manual entry <b>40h → 4h</b> per 1K documents</span>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
@@ -558,20 +749,45 @@
   <div class="wrap">
     <div class="cols reveal">
       <div class="rail">
-        <span class="mono rail-num">03</span>
+        <span class="mono rail-num">04</span>
         <span class="mono">Selected Work</span>
       </div>
       <div>
-        <h2 class="sec-title">Public reference builds of <em>real production problems</em></h2>
+        <h2 class="sec-title">Code you can <em>actually read</em></h2>
         <p class="lede" style="margin-bottom:3rem">
-          Bank work can't be published, so each entry below is a public, data-safe reference
-          build of a real problem — with the real constraints, the real taxonomy shapes, and
-          the negative results kept in rather than edited out.
+          Personal work, plus data-safe reference builds of problems I worked on earlier at the
+          bank — real constraints and real taxonomy shapes, synthetic data, and the negative
+          results kept in rather than edited out.
         </p>
 
         <div class="work-item">
           <div class="work-meta">
             <span class="num">01</span>
+            <span class="mono domain">Multi-Agent · Personal</span>
+            <span class="ctx">Solo build<br />2026</span>
+          </div>
+          <div class="work-body">
+            <h3>Project Shonku</h3>
+            <p>
+              A multi-agent platform unifying five heterogeneous agent architectures — stateless
+              multi-subagent pipelines, a stateful file-backed agent, and tool-wrapped procedural
+              pipelines — behind one FastAPI backend and a streaming interface. Includes a
+              cross-agent long-term memory layer (extract → search → update → store) over ChromaDB
+              with an optional Neo4j entity graph, scoped per agent, so agents share recall without
+              sharing state.
+            </p>
+            <div class="stack">
+              <span>LangGraph</span><span>FastAPI</span><span>ChromaDB</span><span>Neo4j</span><span>FAISS</span><span>CLIP</span>
+            </div>
+            <div class="links">
+              <a href="https://github.com/debanjanm/Project-Shonku" target="_blank" rel="noopener">GitHub ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="work-item">
+          <div class="work-meta">
+            <span class="num">02</span>
             <span class="mono domain">NLP · Retrieval</span>
             <span class="ctx">Standard Chartered<br />Trade Finance</span>
           </div>
@@ -596,7 +812,7 @@
 
         <div class="work-item">
           <div class="work-meta">
-            <span class="num">02</span>
+            <span class="num">03</span>
             <span class="mono domain">Entity Resolution</span>
             <span class="ctx">Standard Chartered<br />Trade Finance</span>
           </div>
@@ -620,7 +836,7 @@
 
         <div class="work-item">
           <div class="work-meta">
-            <span class="num">03</span>
+            <span class="num">04</span>
             <span class="mono domain">NLP · Analytics</span>
             <span class="ctx">Standard Chartered<br />Customer Experience</span>
           </div>
@@ -645,7 +861,7 @@
 
         <div class="work-item">
           <div class="work-meta">
-            <span class="num">04</span>
+            <span class="num">05</span>
             <span class="mono domain">NLP · Classification</span>
             <span class="ctx">Standard Chartered<br />Customer Experience</span>
           </div>
@@ -671,7 +887,7 @@
 
         <div class="work-item">
           <div class="work-meta">
-            <span class="num">05</span>
+            <span class="num">06</span>
             <span class="mono domain">Entity Resolution · Fraud</span>
             <span class="ctx">Standard Chartered<br />Client Due Diligence</span>
           </div>
@@ -696,7 +912,7 @@
 
         <div class="work-item">
           <div class="work-meta">
-            <span class="num">06</span>
+            <span class="num">07</span>
             <span class="mono domain">LLM · Conversational AI</span>
             <span class="ctx">Omdena<br />Team 4 Sprint</span>
           </div>
@@ -721,7 +937,7 @@
 
         <div class="work-item">
           <div class="work-meta">
-            <span class="num">07</span>
+            <span class="num">08</span>
             <span class="mono domain">LLM · RAG</span>
             <span class="ctx">Omdena<br />Team 5 Sprint</span>
           </div>
@@ -753,7 +969,7 @@
   <div class="wrap">
     <div class="cols reveal">
       <div class="rail">
-        <span class="mono rail-num">04</span>
+        <span class="mono rail-num">05</span>
         <span class="mono">Experience</span>
       </div>
       <div>
@@ -761,29 +977,29 @@
 
         <div class="job">
           <div class="job-meta">
-            <span class="mono">Aug 2025 — Present</span>
-            <span class="co">Standard Chartered · Bengaluru</span>
+            <span class="mono">Jul 2025 — Present</span>
+            <span class="co">Standard Chartered GBS · Bengaluru</span>
           </div>
           <div class="job-body">
             <h3>Senior AI Engineer</h3>
             <ul>
-              <li>Gen AI Squad Lead, driving development of Standard Chartered's proprietary Gen AI products with the SCNXT AIML Product team.</li>
-              <li>Leading LLM fine-tuning, latency optimization, and model quantization for enterprise-scale deployment.</li>
-              <li>Applying advanced analytics to complex banking and financial problems at scale.</li>
+              <li>Built a shared multi-tenant governance backend from scratch, standardizing authentication, guardrails, retrieval, and audit logging across compliance agents; led its domain-driven, clean-architecture migration with a two-person engineering pod.</li>
+              <li>Architected a multi-agent RAG platform on that framework, replacing multi-day manual compliance triage with same-day, jurisdiction-scoped, auditable policy answers.</li>
+              <li>Built a regulatory impact-analysis engine flagging whether new circulars affect existing policies — optimized for recall, since a missed impact costs more than a false alarm, while halving LLM calls through two-stage reasoning.</li>
             </ul>
           </div>
         </div>
 
         <div class="job">
           <div class="job-meta">
-            <span class="mono">Apr 2024 — Jul 2025</span>
-            <span class="co">Standard Chartered · Bengaluru</span>
+            <span class="mono">Apr 2024 — Jun 2025</span>
+            <span class="co">Standard Chartered GBS · Bengaluru</span>
           </div>
           <div class="job-body">
-            <h3>AI Engineer</h3>
+            <h3>Gen AI Squad Lead</h3>
             <ul>
-              <li>Built and deployed LLM-powered solutions within the Gen AI team, contributing to early-stage proprietary AI product development.</li>
-              <li>Worked on RAG pipelines, prompt engineering, and agentic workflows for internal banking use cases.</li>
+              <li>Built an internal LLM fine-tuning platform (QLoRA on Mistral-7B-Instruct, 4-bit NF4 quantization, Flash Attention 2) with a config-driven pipeline from data prep through inference — 3x training speed, 10% memory reduction, 4% hit-rate improvement.</li>
+              <li>Owned the model-serving microservice in an internal prompt platform, supporting downstream model selection for Gen AI projects.</li>
             </ul>
           </div>
         </div>
@@ -791,12 +1007,13 @@
         <div class="job">
           <div class="job-meta">
             <span class="mono">Jul 2021 — Mar 2024</span>
-            <span class="co">Standard Chartered · Bengaluru</span>
+            <span class="co">Standard Chartered GBS · Bengaluru</span>
           </div>
           <div class="job-body">
             <h3>Deep Learning Specialist</h3>
             <ul>
-              <li>Built deep learning models for NLP tasks including information extraction, document understanding, and classification.</li>
+              <li>Owned the core engine of a config-driven, 4-layer multi-strategy entity extraction framework (regex, keyword, lookup, ontology) for financial documents across four release phases — 50K+ documents/month, cutting manual entry from 40 hours to 4 per 1K documents.</li>
+              <li>Extended a sequence-tagging NER model (BERT + BiLSTM + Attention + CRF) into the document pipeline, built a scoring-logic proof of concept, and fixed production defects.</li>
               <li>Earned SPOT Award Q4 2021, SPOT Award Q2 2023, and the GEM Award 2023.</li>
             </ul>
           </div>
@@ -857,35 +1074,35 @@
   <div class="wrap">
     <div class="cols reveal">
       <div class="rail">
-        <span class="mono rail-num">05</span>
+        <span class="mono rail-num">06</span>
         <span class="mono">Toolkit</span>
       </div>
       <div>
         <h2 class="sec-title">What I build <em>with</em></h2>
         <div class="tools">
           <div class="tool-group">
-            <h4>Languages</h4>
-            <p>Python · SQL · R · Bash · JavaScript</p>
+            <h4>Agentic AI</h4>
+            <p>LangGraph · LangChain · LlamaIndex · Multi-agent orchestration · RAG · Document AI</p>
           </div>
           <div class="tool-group">
-            <h4>LLMs &amp; Gen AI</h4>
-            <p>LangChain · LlamaIndex · HuggingFace · OpenAI API · Gemini · RAG · Fine-tuning · Quantization</p>
+            <h4>Fine-tuning &amp; Serving</h4>
+            <p>PyTorch · HuggingFace Transformers · PEFT · bitsandbytes · QLoRA · 4-bit quantization · Flash Attention</p>
           </div>
           <div class="tool-group">
-            <h4>ML &amp; Deep Learning</h4>
-            <p>PyTorch · TensorFlow · scikit-learn · Keras · XGBoost · LightGBM</p>
+            <h4>Retrieval</h4>
+            <p>FAISS · ChromaDB · Databricks Vector Search · BM25 · RRF · Neo4j</p>
           </div>
           <div class="tool-group">
             <h4>Statistics &amp; Evaluation</h4>
             <p>scipy · statsmodels · Hypothesis testing · Cross-validation · SHAP · Cluster validity indices</p>
           </div>
           <div class="tool-group">
-            <h4>Data &amp; Analytics</h4>
-            <p>Pandas · NumPy · Polars · Spark · dbt · Airflow · FAISS</p>
+            <h4>Backend &amp; Cloud</h4>
+            <p>Django · FastAPI · PostgreSQL · Docker · Azure · CI/CD (Azure Pipelines)</p>
           </div>
           <div class="tool-group">
-            <h4>MLOps &amp; Deployment</h4>
-            <p>Docker · FastAPI · MLflow · BentoML · AWS SageMaker · GitHub Actions · Streamlit</p>
+            <h4>Languages &amp; Tools</h4>
+            <p>Python · R · SQL · Git · JIRA · Pandas · NumPy · scikit-learn</p>
           </div>
         </div>
       </div>
@@ -898,7 +1115,7 @@
   <div class="wrap">
     <div class="cols reveal">
       <div class="rail">
-        <span class="mono rail-num">06</span>
+        <span class="mono rail-num">07</span>
         <span class="mono">Education</span>
       </div>
       <div>
@@ -939,7 +1156,7 @@
   <div class="wrap">
     <div class="cols reveal">
       <div class="rail">
-        <span class="mono rail-num">07</span>
+        <span class="mono rail-num">08</span>
         <span class="mono">Contact</span>
       </div>
       <div>
@@ -950,7 +1167,7 @@
         </p>
         <div class="contact-links">
           <a href="mailto:dmondal896@gmail.com">dmondal896@gmail.com <span class="arr">↗</span></a>
-          <a href="https://linkedin.com/in/debanjanmondal" target="_blank" rel="noopener">LinkedIn <span class="arr">↗</span></a>
+          <a href="https://www.linkedin.com/in/debanjan-mondal/" target="_blank" rel="noopener">LinkedIn <span class="arr">↗</span></a>
           <a href="https://github.com/debanjanm" target="_blank" rel="noopener">GitHub <span class="arr">↗</span></a>
         </div>
       </div>
