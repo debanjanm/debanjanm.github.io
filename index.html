@@ -429,6 +429,7 @@
     }
 
     /* ── RESPONSIVE ── */
+    @media (max-width: 960px) { .nav-links { display: none; } }
     @media (max-width: 820px) {
       .cols, .work-item, .job { grid-template-columns: 1fr; gap: 1.2rem; }
       .rail { position: static; }
@@ -458,7 +459,8 @@
         <li><a href="#approach">Approach</a></li>
         <li><a href="#arc">Arc</a></li>
         <li><a href="#platforms">Professional</a></li>
-        <li><a href="#work">Open Source</a></li>
+        <li><a href="#personal">Personal</a></li>
+        <li><a href="#public">Public</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -867,41 +869,41 @@
   </div>
 </section>
 
-<!-- ─── WORK ─── -->
-<section id="work">
+<!-- ─── PERSONAL WORK ─── -->
+<section id="personal">
   <div class="wrap">
     <div class="cols reveal">
       <div class="rail">
         <span class="mono rail-num">04</span>
-        <span class="mono">Open Source</span>
+        <span class="mono">Personal Work</span>
       </div>
       <div>
-        <h2 class="sec-title">Code you can <em>actually read</em></h2>
+        <h2 class="sec-title">Solo builds, <em>end to end</em></h2>
         <p class="lede" style="margin-bottom:3rem">
-          Personal builds and AI-for-good sprints, in public repositories.
+          Projects I design and build alone, outside work — public repositories you can read and run.
         </p>
 
         <div class="work-item">
           <div class="work-meta">
             <span class="num">01</span>
-            <span class="mono domain">Multi-Agent · Personal</span>
+            <span class="mono domain">Agentic RAG · Memory</span>
             <span class="ctx">Solo build<br />2026</span>
           </div>
           <div class="work-body">
-            <h3>Project Shonku</h3>
+            <h3>DocQA Agent</h3>
             <p>
-              A multi-agent platform unifying five heterogeneous agent architectures — stateless
-              multi-subagent pipelines, a stateful file-backed agent, and tool-wrapped procedural
-              pipelines — behind one FastAPI backend and a streaming interface. Includes a
-              cross-agent long-term memory layer (extract → search → update → store) over ChromaDB
-              with an optional Neo4j entity graph, scoped per agent, so agents share recall without
-              sharing state.
+              Chat with a curated knowledge base and get cited answers. Hybrid retrieval — FAISS dense
+              search plus BM25 keyword search, merged with Reciprocal Rank Fusion — behind a LangGraph
+              agent, with a long-term memory layer that extracts durable facts about the user into
+              ChromaDB after every turn. Started as a four-agent platform and was deliberately descoped
+              to one deeper agent; the architecture and its design decisions are written up in the repo.
             </p>
             <div class="stack">
-              <span>LangGraph</span><span>FastAPI</span><span>ChromaDB</span><span>Neo4j</span><span>FAISS</span><span>CLIP</span>
+              <span>LangGraph</span><span>FAISS</span><span>BM25 + RRF</span><span>ChromaDB</span><span>FastAPI</span><span>Next.js</span>
             </div>
             <div class="links">
-              <a href="https://github.com/debanjanm/Project-Shonku" target="_blank" rel="noopener">GitHub ↗</a>
+              <a href="https://github.com/debanjanm/DocQA-Agent" target="_blank" rel="noopener">GitHub ↗</a>
+              <a href="https://github.com/debanjanm/DocQA-Agent/blob/main/docs/ARCHITECTURE.md" target="_blank" rel="noopener">Architecture ↗</a>
             </div>
           </div>
         </div>
@@ -909,6 +911,72 @@
         <div class="work-item">
           <div class="work-meta">
             <span class="num">02</span>
+            <span class="mono domain">Statistics · Agentic</span>
+            <span class="ctx">Solo build<br />2026</span>
+          </div>
+          <div class="work-body">
+            <h3>Agentic Data Science</h3>
+            <p>
+              A data science workbench for tabular data: upload a CSV, then run AutoML — profiling, a
+              model leaderboard, predictions — or classical statistics: hypothesis testing, GLMs,
+              Bayesian modeling, time series, and survival analysis. A tool-calling copilot with 26
+              tools, every test and model plus NL-to-SQL, explains results in plain English. The
+              statistics training and the agent engineering, in one tool.
+            </p>
+            <div class="stack">
+              <span>Streamlit</span><span>AutoML</span><span>GLM</span><span>Bayesian</span><span>ARIMA</span><span>Cox PH</span><span>Tool-calling agent</span>
+            </div>
+            <div class="links">
+              <a href="https://github.com/debanjanm/Data-Science-Agent" target="_blank" rel="noopener">GitHub ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="work-item">
+          <div class="work-meta">
+            <span class="num">03</span>
+            <span class="mono domain">Agent Memory</span>
+            <span class="ctx">Solo build<br />2026</span>
+          </div>
+          <div class="work-body">
+            <h3>Remembrane — Long-Term Agent Memory</h3>
+            <p>
+              Long-term memory for AI agents, implementing the Mem0 architecture — extract, search,
+              update, store — over a hybrid backend: ChromaDB for vector recall and a Neo4j entity
+              graph for relationships. A FastAPI service exposes memory-augmented chat, memory CRUD,
+              and graph endpoints, with a Streamlit UI to inspect what each agent remembers.
+            </p>
+            <div class="stack">
+              <span>Mem0</span><span>ChromaDB</span><span>Neo4j</span><span>FastAPI</span><span>Streamlit</span>
+            </div>
+            <div class="links">
+              <a href="https://github.com/debanjanm/Agentic-Memory" target="_blank" rel="noopener">GitHub ↗</a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── PUBLIC WORK ─── -->
+<section id="public">
+  <div class="wrap">
+    <div class="cols reveal">
+      <div class="rail">
+        <span class="mono rail-num">05</span>
+        <span class="mono">Public Work</span>
+      </div>
+      <div>
+        <h2 class="sec-title">Collaborative work, <em>in the open</em></h2>
+        <p class="lede" style="margin-bottom:3rem">
+          AI-for-good sprints with Omdena's global community of ML engineers — team projects, public repositories.
+        </p>
+
+        <div class="work-item">
+          <div class="work-meta">
+            <span class="num">01</span>
             <span class="mono domain">LLM · Conversational AI</span>
             <span class="ctx">Omdena<br />Team 4 Sprint</span>
           </div>
@@ -933,7 +1001,7 @@
 
         <div class="work-item">
           <div class="work-meta">
-            <span class="num">03</span>
+            <span class="num">02</span>
             <span class="mono domain">LLM · RAG</span>
             <span class="ctx">Omdena<br />Team 5 Sprint</span>
           </div>
@@ -965,7 +1033,7 @@
   <div class="wrap">
     <div class="cols reveal">
       <div class="rail">
-        <span class="mono rail-num">05</span>
+        <span class="mono rail-num">06</span>
         <span class="mono">Experience</span>
       </div>
       <div>
@@ -1040,7 +1108,7 @@
           <div class="job-body">
             <h3>Junior ML Engineer</h3>
             <ul>
-              <li>Collaborating on real-world AI-for-good sprints with Omdena's global community of ML engineers — see Selected Work 06 and 07.</li>
+              <li>Collaborating on real-world AI-for-good sprints with Omdena's global community of ML engineers — see Public Work.</li>
             </ul>
           </div>
         </div>
@@ -1070,7 +1138,7 @@
   <div class="wrap">
     <div class="cols reveal">
       <div class="rail">
-        <span class="mono rail-num">06</span>
+        <span class="mono rail-num">07</span>
         <span class="mono">Toolkit</span>
       </div>
       <div>
@@ -1111,7 +1179,7 @@
   <div class="wrap">
     <div class="cols reveal">
       <div class="rail">
-        <span class="mono rail-num">07</span>
+        <span class="mono rail-num">08</span>
         <span class="mono">Education</span>
       </div>
       <div>
@@ -1152,7 +1220,7 @@
   <div class="wrap">
     <div class="cols reveal">
       <div class="rail">
-        <span class="mono rail-num">08</span>
+        <span class="mono rail-num">09</span>
         <span class="mono">Contact</span>
       </div>
       <div>
