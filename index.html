@@ -326,6 +326,12 @@
     .metrics span::after { content: '  ·  '; color: var(--rule); }
     .metrics span:last-child::after { content: ''; }
 
+    .group { margin: 0 0 0.4rem; }
+    .group-label { display: block; color: var(--accent); margin-bottom: 0.6rem; }
+    .group p { color: var(--text-dim); max-width: 62ch; line-height: 1.7; }
+    .group.split { margin-top: 3.2rem; padding-top: 2.6rem; border-top: 1px solid var(--rule); }
+    .platform:has(+ .group) { border-bottom: none; }
+
     /* ── EXPERIENCE ── */
     .job {
       display: grid; grid-template-columns: 190px 1fr;
@@ -451,8 +457,8 @@
       <ul class="nav-links">
         <li><a href="#approach">Approach</a></li>
         <li><a href="#arc">Arc</a></li>
-        <li><a href="#platforms">Platforms</a></li>
-        <li><a href="#work">Work</a></li>
+        <li><a href="#platforms">Professional</a></li>
+        <li><a href="#work">Open Source</a></li>
         <li><a href="#experience">Experience</a></li>
         <li><a href="#contact">Contact</a></li>
       </ul>
@@ -594,16 +600,20 @@
     <div class="cols reveal">
       <div class="rail">
         <span class="mono rail-num">03</span>
-        <span class="mono">Platform Work</span>
+        <span class="mono">Professional Work</span>
       </div>
       <div>
-        <h2 class="sec-title">Agentic systems for a <em>regulated environment</em></h2>
+        <h2 class="sec-title">Work that lives <em>inside a bank</em></h2>
         <p class="lede" style="margin-bottom:3rem">
-          This work lives inside a bank, so the code stays there. What I can share is the
-          architecture and the reasoning — the constraints that shaped each system, and the
+          The code and data stay with the bank. What I can share is the architecture and the
+          reasoning — the constraints that shaped each system, and the
           tradeoffs I'd defend in a design review. Systems are described by what they do
           rather than by their internal names.
         </p>
+
+        <div class="group">
+          <span class="mono group-label">Platforms · 2021 — Present</span>
+        </div>
 
         <div class="platform">
           <div class="platform-head">
@@ -739,6 +749,119 @@
           </div>
         </div>
 
+        <div class="group split">
+          <span class="mono group-label">Earlier projects · 2020 — 2021</span>
+          <p>
+            Graduate rotations across Trade Finance, Customer Experience, and Client Due
+            Diligence — five problems taken end to end, from proof of concept to handed-off MVP.
+          </p>
+        </div>
+
+        <div class="work-item">
+          <div class="work-meta">
+            <span class="num">01</span>
+            <span class="mono domain">NLP · Retrieval</span>
+            <span class="ctx">Standard Chartered<br />Trade Finance</span>
+          </div>
+          <div class="work-body">
+            <h3>Harmonized System (HS) Code Prediction</h3>
+            <p>
+              Predicts customs HS codes from free-text product descriptions via zero-shot
+              embedding retrieval — Universal Sentence Encoder plus cosine similarity against
+              ~5,300 official code descriptions, so no labeled training data is needed at all.
+              Includes a separate supervised TF-IDF/TextCNN exploration for comparison, where
+              the deep model honestly loses to the linear baseline on limited data.
+            </p>
+            <div class="stack">
+              <span>Universal Sentence Encoder</span><span>Cosine Similarity</span><span>TextCNN</span><span>TF-IDF</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="work-item">
+          <div class="work-meta">
+            <span class="num">02</span>
+            <span class="mono domain">Entity Resolution</span>
+            <span class="ctx">Standard Chartered<br />Trade Finance</span>
+          </div>
+          <div class="work-body">
+            <h3>Port &amp; Entity Name Matching</h3>
+            <p>
+              Scores how well a manually-entered bank, port, company, or vessel name matches a
+              known dictionary using five similarity metrics — Monge-Elkan, Jaro-Winkler,
+              Jaccard, Damerau-Levenshtein, Levenshtein — and takes the maximum, because typos,
+              reordering, and abbreviations each favor a different metric.
+            </p>
+            <div class="stack">
+              <span>R</span><span>stringdist</span><span>comparator</span><span>Fuzzy Matching</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="work-item">
+          <div class="work-meta">
+            <span class="num">03</span>
+            <span class="mono domain">NLP · Analytics</span>
+            <span class="ctx">Standard Chartered<br />Customer Experience</span>
+          </div>
+          <div class="work-body">
+            <h3>Customer Feedback &amp; NPS Analysis</h3>
+            <p>
+              Mines ~50K monthly NPS survey responses — score plus Hindi/English/Hinglish free
+              text — for time and location drivers, VADER sentiment, and NPS-impact n-gram
+              themes. Every claim is gated behind a significance test before it reaches the
+              leadership summary, so a persuasive-looking bar chart can't become a decision on
+              its own.
+            </p>
+            <div class="stack">
+              <span>VADER</span><span>ANOVA / t-test</span><span>scikit-learn</span><span>Streamlit</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="work-item">
+          <div class="work-meta">
+            <span class="num">04</span>
+            <span class="mono domain">NLP · Classification</span>
+            <span class="ctx">Standard Chartered<br />Customer Experience</span>
+          </div>
+          <div class="work-body">
+            <h3>Email Complaint Classification</h3>
+            <p>
+              Routing for a real ~4–5K-emails/day triage problem: a three-level hierarchical
+              classifier mirroring the bank's actual KANA taxonomy, evolved from a TF-IDF
+              baseline into an explainable pipeline that surfaces the weighted key phrases
+              behind every prediction — the stakeholder asked for <em>why</em>, not just
+              <em>what</em>. Includes a SHAP comparison explaining when exact attribution beats
+              approximation.
+            </p>
+            <div class="stack">
+              <span>scikit-learn</span><span>SHAP</span><span>Hierarchical Cascade</span><span>Explainability</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="work-item">
+          <div class="work-meta">
+            <span class="num">05</span>
+            <span class="mono domain">Entity Resolution · Fraud</span>
+            <span class="ctx">Standard Chartered<br />Client Due Diligence</span>
+          </div>
+          <div class="work-body">
+            <h3>Customer Record Deduplication</h3>
+            <p>
+              Links customer records opened under different-looking names and addresses back to
+              the same person — the fraud pattern where a defaulted loan resurfaces as a "new"
+              customer. Blocking cuts 254K candidate pairs to 634, a trained classifier scores
+              them, and graph clustering resolves identities. Key finding: a perfect held-out
+              pairwise score still produced five false merges via transitive chaining.
+            </p>
+            <div class="stack">
+              <span>NetworkX</span><span>scikit-learn</span><span>jellyfish</span><span>Blocking</span>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
@@ -750,14 +873,12 @@
     <div class="cols reveal">
       <div class="rail">
         <span class="mono rail-num">04</span>
-        <span class="mono">Selected Work</span>
+        <span class="mono">Open Source</span>
       </div>
       <div>
         <h2 class="sec-title">Code you can <em>actually read</em></h2>
         <p class="lede" style="margin-bottom:3rem">
-          Personal work, plus data-safe reference builds of problems I worked on earlier at the
-          bank — real constraints and real taxonomy shapes, synthetic data, and the negative
-          results kept in rather than edited out.
+          Personal builds and AI-for-good sprints, in public repositories.
         </p>
 
         <div class="work-item">
@@ -788,131 +909,6 @@
         <div class="work-item">
           <div class="work-meta">
             <span class="num">02</span>
-            <span class="mono domain">NLP · Retrieval</span>
-            <span class="ctx">Standard Chartered<br />Trade Finance</span>
-          </div>
-          <div class="work-body">
-            <h3>Harmonized System (HS) Code Prediction</h3>
-            <p>
-              Predicts customs HS codes from free-text product descriptions via zero-shot
-              embedding retrieval — Universal Sentence Encoder plus cosine similarity against
-              ~5,300 official code descriptions, so no labeled training data is needed at all.
-              Includes a separate supervised TF-IDF/TextCNN exploration for comparison, where
-              the deep model honestly loses to the linear baseline on limited data.
-            </p>
-            <div class="stack">
-              <span>Universal Sentence Encoder</span><span>Cosine Similarity</span><span>TextCNN</span><span>TF-IDF</span>
-            </div>
-            <div class="links">
-              <a href="https://github.com/debanjanm/Portfolio-Professional/tree/main/Harmonized-System-Code-Prediction" target="_blank" rel="noopener">GitHub ↗</a>
-              <a href="https://github.com/debanjanm/Portfolio-Professional/blob/main/Harmonized-System-Code-Prediction/README.md" target="_blank" rel="noopener">Docs ↗</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="work-item">
-          <div class="work-meta">
-            <span class="num">03</span>
-            <span class="mono domain">Entity Resolution</span>
-            <span class="ctx">Standard Chartered<br />Trade Finance</span>
-          </div>
-          <div class="work-body">
-            <h3>Port &amp; Entity Name Matching</h3>
-            <p>
-              Scores how well a manually-entered bank, port, company, or vessel name matches a
-              known dictionary using five similarity metrics — Monge-Elkan, Jaro-Winkler,
-              Jaccard, Damerau-Levenshtein, Levenshtein — and takes the maximum, because typos,
-              reordering, and abbreviations each favor a different metric.
-            </p>
-            <div class="stack">
-              <span>R</span><span>stringdist</span><span>comparator</span><span>Fuzzy Matching</span>
-            </div>
-            <div class="links">
-              <a href="https://github.com/debanjanm/Portfolio-Professional/tree/main/Port-Matching" target="_blank" rel="noopener">GitHub ↗</a>
-              <a href="https://github.com/debanjanm/Portfolio-Professional/blob/main/Port-Matching/README.md" target="_blank" rel="noopener">Docs ↗</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="work-item">
-          <div class="work-meta">
-            <span class="num">04</span>
-            <span class="mono domain">NLP · Analytics</span>
-            <span class="ctx">Standard Chartered<br />Customer Experience</span>
-          </div>
-          <div class="work-body">
-            <h3>Customer Feedback &amp; NPS Analysis</h3>
-            <p>
-              Mines ~50K monthly NPS survey responses — score plus Hindi/English/Hinglish free
-              text — for time and location drivers, VADER sentiment, and NPS-impact n-gram
-              themes. Every claim is gated behind a significance test before it reaches the
-              leadership summary, so a persuasive-looking bar chart can't become a decision on
-              its own.
-            </p>
-            <div class="stack">
-              <span>VADER</span><span>ANOVA / t-test</span><span>scikit-learn</span><span>Streamlit</span>
-            </div>
-            <div class="links">
-              <a href="https://github.com/debanjanm/Portfolio-Professional/tree/main/Customer-Feedback-Analysis" target="_blank" rel="noopener">GitHub ↗</a>
-              <a href="https://github.com/debanjanm/Portfolio-Professional/blob/main/Customer-Feedback-Analysis/README.md" target="_blank" rel="noopener">Docs ↗</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="work-item">
-          <div class="work-meta">
-            <span class="num">05</span>
-            <span class="mono domain">NLP · Classification</span>
-            <span class="ctx">Standard Chartered<br />Customer Experience</span>
-          </div>
-          <div class="work-body">
-            <h3>Email Complaint Classification</h3>
-            <p>
-              Routing for a real ~4–5K-emails/day triage problem: a three-level hierarchical
-              classifier mirroring the bank's actual KANA taxonomy, evolved from a TF-IDF
-              baseline into an explainable pipeline that surfaces the weighted key phrases
-              behind every prediction — the stakeholder asked for <em>why</em>, not just
-              <em>what</em>. Includes a SHAP comparison explaining when exact attribution beats
-              approximation.
-            </p>
-            <div class="stack">
-              <span>scikit-learn</span><span>SHAP</span><span>Hierarchical Cascade</span><span>Explainability</span>
-            </div>
-            <div class="links">
-              <a href="https://github.com/debanjanm/Portfolio-Professional/tree/main/Complaint-Classification" target="_blank" rel="noopener">GitHub ↗</a>
-              <a href="https://github.com/debanjanm/Portfolio-Professional/blob/main/Complaint-Classification/README.md" target="_blank" rel="noopener">Docs ↗</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="work-item">
-          <div class="work-meta">
-            <span class="num">06</span>
-            <span class="mono domain">Entity Resolution · Fraud</span>
-            <span class="ctx">Standard Chartered<br />Client Due Diligence</span>
-          </div>
-          <div class="work-body">
-            <h3>Customer Record Deduplication</h3>
-            <p>
-              Links customer records opened under different-looking names and addresses back to
-              the same person — the fraud pattern where a defaulted loan resurfaces as a "new"
-              customer. Blocking cuts 254K candidate pairs to 634, a trained classifier scores
-              them, and graph clustering resolves identities. Key finding: a perfect held-out
-              pairwise score still produced five false merges via transitive chaining.
-            </p>
-            <div class="stack">
-              <span>NetworkX</span><span>scikit-learn</span><span>jellyfish</span><span>Blocking</span>
-            </div>
-            <div class="links">
-              <a href="https://github.com/debanjanm/Portfolio-Professional/tree/main/Customer-Record-Deduplication" target="_blank" rel="noopener">GitHub ↗</a>
-              <a href="https://github.com/debanjanm/Portfolio-Professional/blob/main/Customer-Record-Deduplication/README.md" target="_blank" rel="noopener">Docs ↗</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="work-item">
-          <div class="work-meta">
-            <span class="num">07</span>
             <span class="mono domain">LLM · Conversational AI</span>
             <span class="ctx">Omdena<br />Team 4 Sprint</span>
           </div>
@@ -937,7 +933,7 @@
 
         <div class="work-item">
           <div class="work-meta">
-            <span class="num">08</span>
+            <span class="num">03</span>
             <span class="mono domain">LLM · RAG</span>
             <span class="ctx">Omdena<br />Team 5 Sprint</span>
           </div>
