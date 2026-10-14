@@ -1,0 +1,29 @@
+---
+layout: base
+title: Writing
+description: Notes on evaluation, retrieval, and agentic systems — the decisions behind the work.
+---
+<div class="post-meta">
+  <span class="mono">Writing</span>
+</div>
+<h1 class="post-title">Notes on <em style="color:var(--accent)">the decisions</em> behind the work</h1>
+<p class="post-dek" style="border-bottom:none;padding-bottom:0;margin-bottom:0">
+  Evaluation, retrieval, and agentic systems — what I tried, what the numbers actually said,
+  and the tradeoffs I'd defend.
+</p>
+
+{% if site.posts.size > 0 %}
+<ul class="post-list">
+  {%- for post in site.posts %}
+  <li>
+    <a href="{{ post.url | relative_url }}">
+      <span class="mono">{{ post.date | date: "%-d %B %Y" }}</span>
+      <h2>{{ post.title }}</h2>
+      {%- if post.description %}<p>{{ post.description }}</p>{% endif %}
+    </a>
+  </li>
+  {%- endfor %}
+</ul>
+{% else %}
+<p class="empty">First posts are on the way.</p>
+{% endif %}

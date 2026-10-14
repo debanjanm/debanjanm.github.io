@@ -1,0 +1,9 @@
+# Jekyll build output
+_site/
+.jekyll-cache/
+.sass-cache/
+
+# Drafts stay local until moved to _posts/ — this repo is public.
+_drafts/
+
+.DS_Store

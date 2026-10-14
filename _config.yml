@@ -1,0 +1,23 @@
+title: Debanjan Mondal
+description: Senior AI Engineer — statistics to production AI.
+url: https://debanjanm.github.io
+author: Debanjan Mondal
+
+permalink: /writing/:title/
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
+
+plugins:
+  - jekyll-feed
+
+feed:
+  path: writing/feed.xml
+
+# Working docs live in the repo but are not part of the site.
+exclude:
+  - PLAN.md
+  - PORTFOLIO.md
+  - README.md
