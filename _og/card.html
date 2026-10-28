@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<!-- Source for assets/og-card.png (1200x630). Not published: Jekyll skips _og/.
-     Regenerate with the command in _og/README.md. -->
+<!-- Source for assets/og-card.png (1200x630) — also the LinkedIn Featured thumbnail.
+     Shown at ~300-360px wide, directly under/beside the name, so: no name, big type only.
+     Not published: Jekyll skips _og/. Regenerate with the command in _og/README.md. -->
 <html>
 <head>
 <meta charset="UTF-8" />
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300&family=JetBrains+Mono:wght@400;500&display=block" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300&family=JetBrains+Mono:wght@500&display=block" rel="stylesheet" />
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html, body { width: 1200px; height: 630px; overflow: hidden; }
@@ -12,58 +13,43 @@
     background: #0c0c0d; color: #ececec;
     font-family: 'Newsreader', Georgia, serif;
     -webkit-font-smoothing: antialiased;
-    padding: 72px 84px 64px;
-    display: flex; flex-direction: column;
-    position: relative;
+    padding: 64px 84px;
+    display: flex; flex-direction: column; justify-content: space-between;
   }
+  .top { display: flex; justify-content: space-between; align-items: baseline; }
   .mono {
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 17px; letter-spacing: 0.14em; text-transform: uppercase;
-    color: #82828a;
+    font-family: 'JetBrains Mono', monospace; font-weight: 500;
+    font-size: 26px; letter-spacing: 0.16em; text-transform: uppercase;
   }
-  .meta { display: flex; align-items: center; gap: 16px; }
-  .dot { width: 9px; height: 9px; border-radius: 50%; background: #e8590c;
-         box-shadow: 0 0 0 5px rgba(232,89,12,0.18); }
-  h1 {
-    font-weight: 300; font-size: 122px; line-height: 1;
-    letter-spacing: -0.035em; margin-top: 34px;
+  .label { color: #e8590c; }
+  .url { color: #82828a; letter-spacing: 0.06em; text-transform: none; }
+
+  .arc { display: flex; flex-direction: column; gap: 6px; }
+  .step {
+    font-weight: 300; font-size: 88px; line-height: 1.04; letter-spacing: -0.03em;
+    display: flex; align-items: center; gap: 30px;
   }
-  h1 span { color: #e8590c; }
-  .thesis {
-    font-weight: 300; font-style: italic; font-size: 34px; line-height: 1.35;
-    color: #b4b4b8; margin-top: 26px; max-width: 900px;
+  .step::before { content: ''; width: 44px; height: 3px; background: #3a3a3f; flex: none; }
+  .step:nth-child(2) { margin-left: 120px; }
+  .step:nth-child(3) { margin-left: 240px; color: #e8590c; }
+  .step:nth-child(3)::before { background: #e8590c; }
+
+  .tag {
+    font-weight: 300; font-style: italic; font-size: 38px; line-height: 1.3;
+    color: #b4b4b8;
   }
-  .arc {
-    margin-top: auto;
-    display: grid; grid-template-columns: repeat(3, 250px);
-    border-top: 1px solid #2a2a2e;
-  }
-  .step { padding-top: 20px; position: relative; }
-  .step::before { content: ''; position: absolute; top: -1px; left: 0;
-                  width: 46px; height: 2px; background: #e8590c; }
-  .step .mono { font-size: 15px; display: block; margin-bottom: 8px; }
-  .step .nm { font-size: 30px; }
-  .step:last-child .nm { color: #e8590c; }
-  .url {
-    position: absolute; right: 84px; bottom: 64px;
-    font-family: 'JetBrains Mono', monospace; font-size: 18px;
-    letter-spacing: 0.04em; color: #ececec;
-  }
-  .url::after { content: ' ↗'; color: #e8590c; }
 </style>
 </head>
 <body>
-  <div class="meta">
-    <span class="dot"></span>
-    <span class="mono">Senior AI Engineer · Standard Chartered GBS</span>
+  <div class="top">
+    <span class="mono label">Portfolio</span>
+    <span class="mono url">debanjanm.github.io</span>
   </div>
-  <h1>Debanjan Mondal<span>.</span></h1>
-  <p class="thesis">Is this result real — and will it hold in production?</p>
   <div class="arc">
-    <div class="step"><span class="mono">2015 — 2020</span><span class="nm">Statistics</span></div>
-    <div class="step"><span class="mono">2019 — 2021</span><span class="nm">Data Science</span></div>
-    <div class="step"><span class="mono">2021 — Now</span><span class="nm">AI Engineering</span></div>
+    <div class="step">Statistics</div>
+    <div class="step">Data Science</div>
+    <div class="step">AI Engineering</div>
   </div>
-  <div class="url">debanjanm.github.io</div>
+  <p class="tag">Architecture, decisions, and the evaluation behind them.</p>
 </body>
 </html>
