@@ -17,3 +17,6 @@ im.save('favicon.ico', sizes=[(16, 16), (32, 32), (48, 48)])"
 ```
 
 After deploying, refresh LinkedIn's cached preview at https://www.linkedin.com/post-inspector/
+
+Light variant of the card (not used by the site; for manual uploads): same command with
+`"file://$PWD/_og/card.html?light"` as the URL.

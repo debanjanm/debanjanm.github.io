@@ -4,13 +4,19 @@
      Not published: Jekyll skips _og/. Regenerate with the command in _og/README.md. -->
 <html>
 <head>
+<script>if (location.search.includes("light")) document.documentElement.classList.add("light");</script>
 <meta charset="UTF-8" />
 <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,300&family=JetBrains+Mono:wght@500&display=block" rel="stylesheet" />
 <style>
+  :root { --bg: #0c0c0d; --text: #ececec; --dim: #b4b4b8; --muted: #82828a;
+          --tick: #3a3a3f; --accent: #e8590c; }
+  /* Light variant: open card.html?light */
+  html.light { --bg: #faf8f5; --text: #16161a; --dim: #3d3d45; --muted: #6b6b75;
+               --tick: #cfcac1; --accent: #c1440e; }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html, body { width: 1200px; height: 630px; overflow: hidden; }
   body {
-    background: #0c0c0d; color: #ececec;
+    background: var(--bg); color: var(--text);
     font-family: 'Newsreader', Georgia, serif;
     -webkit-font-smoothing: antialiased;
     padding: 64px 84px;
@@ -21,22 +27,22 @@
     font-family: 'JetBrains Mono', monospace; font-weight: 500;
     font-size: 26px; letter-spacing: 0.16em; text-transform: uppercase;
   }
-  .label { color: #e8590c; }
-  .url { color: #82828a; letter-spacing: 0.06em; text-transform: none; }
+  .label { color: var(--accent); }
+  .url { color: var(--muted); letter-spacing: 0.06em; text-transform: none; }
 
   .arc { display: flex; flex-direction: column; gap: 6px; }
   .step {
     font-weight: 300; font-size: 88px; line-height: 1.04; letter-spacing: -0.03em;
     display: flex; align-items: center; gap: 30px;
   }
-  .step::before { content: ''; width: 44px; height: 3px; background: #3a3a3f; flex: none; }
+  .step::before { content: ''; width: 44px; height: 3px; background: var(--tick); flex: none; }
   .step:nth-child(2) { margin-left: 120px; }
-  .step:nth-child(3) { margin-left: 240px; color: #e8590c; }
-  .step:nth-child(3)::before { background: #e8590c; }
+  .step:nth-child(3) { margin-left: 240px; color: var(--accent); }
+  .step:nth-child(3)::before { background: var(--accent); }
 
   .tag {
     font-weight: 300; font-style: italic; font-size: 38px; line-height: 1.3;
-    color: #b4b4b8;
+    color: var(--dim);
   }
 </style>
 </head>
